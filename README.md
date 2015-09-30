@@ -1,4 +1,4 @@
-# ForceNG
+# Sample 'Inventory Check' App using ForceNG
 ### AngularJS Service for using the Salesforce REST APIs 
 
 ForceNG is a micro-library that makes it easy to use the Salesforce REST APIs in AngularJS applications.
