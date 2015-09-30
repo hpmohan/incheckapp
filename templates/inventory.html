@@ -1,0 +1,37 @@
+<div class="container" style="padding-top: 70px;" >
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <p><button type="button" class="btn btn-default" ng-click="query()"><i
+                    class="glyphicon glyphicon-refresh"></i> Get Items</button><input class="pull-right" placeholder="Search an Item" ng-model="searchText"/></p>
+            <ul id="list" class="list-group">
+                <a ng-repeat="item in items | filter:searchText " href="#" class="list-group-item">{{item.Item_Name__c}}</a>
+            </ul>
+        </div>
+        <div class="col-md-8 container">
+        <div ng-repeat="item in items" >
+             <div class="text-center" ng-bind-html="item.Build__c"></div>
+            <div class="row">
+                <div class="col-xs-8"><h3>{{item.Item_Name__c}}</h3></div>
+                <div class="col-xs-4"><h3>{{item.Price__c | currency}}</h3></div>
+            </div>
+            <div class="well" ng-show="item">
+                <ul>
+                    <li><Strong>Sensors: </Strong>{{item.Sensors__c}}</li>
+                    <li><Strong>OS: </Strong>{{item.Operating_System__c}}</li>
+                    <li><Strong>Chip Set: </Strong>{{item.Chipset__c}}</li>
+                    <li><strong>Stock :</strong>{{item.Availability__c}} Nos</li>
+                    <li><strong>Memory :</strong>{{item.Capacity_GB__c}} GB</li>
+                    <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{item.Availability__c}}%;">
+   <span>Available :</span> {{item.Availability__c}}
+  </div>
+</div>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
